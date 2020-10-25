@@ -1,1 +1,37 @@
+Install Gradle
+
+
+2. Download Gradle
+– To download the latest version of Gradle, visit the Gradle releases page. Use the wget command to download Gradle zip file in the /tmp directory:
+
+# wget https://services.gradle.org/distributions/gradle-6.4.1-bin.zip -P /tmp
+– Once the download is completed, extract the zip file in the /opt/gradle directory:
+
+# sudo unzip -d /opt/gradle /tmp/gradle-*.zip
+3. Setup environment variables
+– We’ll need to setup the Gradle environment variables. Open your text editor and create a new file named gradle.sh inside of the /etc/profile.d/ directory.
+
+# sudo vi /etc/profile.d/gradle.sh
+export GRADLE_HOME=/opt/gradle/gradle-6.4.1
+export PATH=${GRADLE_HOME}/bin:${PATH}
+
+ 
+
+– Finally, load the new environment variables by typing:
+
+# sudo source /etc/profile.d/gradle.sh
+4. Verify the Gradle installation
+– To verify if Gradle is installed properly use the gradle -v command which will display the Gradle version:
+
+# gradle -v
+
+
+https://yallalabs.com/devops/how-to-install-gradle-centos-7-rhel-7/
+
+
+Setup gradle on Jenkins console
+Install gradle plugin without restart
+Manage Jenkins > Jenkins Plugins > available > Gradle Plugin
+Configure maven path
+Manage Jenkins > Global Tool Configuration > gradle
 
