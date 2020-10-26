@@ -1,0 +1,6 @@
+To remove java 1.7 and install java 1.8:
+
+sudo yum install java-1.8.0
+sudo yum remove java-1.7.0-openjdk
+
+https://www.edureka.co/community/981/java-8-application-on-ec2
