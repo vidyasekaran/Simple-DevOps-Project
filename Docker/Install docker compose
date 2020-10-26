@@ -1,0 +1,20 @@
+download binary
+
+[root@ip-172-31-39-218 ~]# sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   651  100   651    0     0   2155      0 --:--:-- --:--:-- --:--:--  2148
+100 11.2M  100 11.2M    0     0  3180k      0  0:00:03  0:00:03 --:--:-- 4672k
+
+change permission
+[root@ip-172-31-39-218 ~]# sudo chmod +x /usr/local/bin/docker-compose
+
+
+check version
+[root@ip-172-31-39-218 ~]# docker-compose version
+docker-compose version 1.22.0, build f46880fe
+docker-py version: 3.4.1
+CPython version: 3.6.6
+OpenSSL version: OpenSSL 1.1.0f  25 May 2017
+
+https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9
