@@ -55,6 +55,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
 Reload -   service sshd reload
 
+3. to switch to amsadmin account
+su - ansadmin
+
+4. To change hostname from command prompt   > hostname ansible-control-node
    ```
    
 
