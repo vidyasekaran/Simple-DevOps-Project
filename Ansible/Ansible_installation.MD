@@ -56,7 +56,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ssh-copy-id ansadmin@<target-server>
    ```
 
-1. Ansible server used to create images and store on docker registry. Hence install docker, start docker services and add ansadmin to the docker group. 
+2. Ansible server used to create images and store on docker registry. Hence install docker, start docker services and add ansadmin to the docker group. 
    ```sh
    yum install docker
    
@@ -75,6 +75,32 @@ Reload -   service sshd reload
 su - ansadmin
 
 4. To change hostname from command prompt   > hostname ansible-control-node
+
+5. from ansible host do below to make sure u are able to ping docker host
+
+
+[root@ansible-control-node /]# mkdir /etc/ansible
+
+create a file /etc/ansible/hosts and put- take ip address of docker host and paste it
+
+[root@ansible-control-node ~]# cat hosts
+172.31.39.218
+localhost
+
+now do ansible ping from ansible host
+
+>> ansible all -m ping
+
+you are able to ping as u see sucess
+
+172.31.39.218 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
    ```
    
 
