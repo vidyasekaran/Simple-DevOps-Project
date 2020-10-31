@@ -50,8 +50,12 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    
    # add user to docker group 
    usermod -aG docker ansadmin
+   
+2. By default user auth is not enabled in Ec2 instance so we should edit password auth to no to y in /etc/ssh/sshd_config/ search PasswordAuthentication no- change from no to yes
 
    ```
+   
+
 1. Create a directory /etc/ansible and create an inventory file called "hosts" add control node and managed hosts IP addresses to it. 
  
 ### Validation test
