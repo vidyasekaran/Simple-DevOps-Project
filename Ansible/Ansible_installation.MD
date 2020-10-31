@@ -53,6 +53,8 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    
 2. By default user auth is not enabled in Ec2 instance so we should edit password auth to no to y in /etc/ssh/sshd_config/ search PasswordAuthentication no- change from no to yes
 
+Reload -   service sshd reload
+
    ```
    
 
