@@ -35,6 +35,22 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    sudo su - ansadmin
    ssh-keygen
    ```
+2. login into your docker host as root user
+   ```
+   [root@ip-172-31-39-218 ~]# useradd ansadmin
+   [root@ip-172-31-39-218 ~]# passwd ansadmin
+   
+   get ip addr from docker machine and login from ansible
+   
+   docker> ip addr (take 2: ehth0 - private ip)
+   ansible try ssh into docker machine > and you will be able to login without password
+   
+   [ec2-user@ip-172-31-11-34 ~]$ su - ansadmin
+   Password:
+   Last login: Sat Oct 31 03:51:06 UTC 2020 on pts/0
+   [ansadmin@ansible-control-node ~]$ ssh 'ansadmin@172.31.39.218'
+
+   
 1. Copy keys onto all ansible managed hosts (on Control node)
    ```sh 
    ssh-copy-id ansadmin@<target-server>
